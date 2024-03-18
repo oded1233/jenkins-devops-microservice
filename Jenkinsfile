@@ -12,7 +12,7 @@ pipeline {
 				echo "Build Number - $env.BUILD_NUMBERH"
 				echo "BUILD_ID - $env.BUILD_ID"
 				echo "JOB_NAME - $env.JOB_NAME"
-				echo "BUILD.TAG - $env.BUILD.TAG
+				echo "BUILD.TAG - $env.BUILD.TAG"
 				echo "BUILD.URL - $env.BUILD.URL"
 			}
 		}
