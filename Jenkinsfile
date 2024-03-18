@@ -45,8 +45,8 @@ pipeline {
 			steps {
 				echo "package"
 				sh 'mvn package -DskipTests'
-		
-		
+			}
+		}
 		stage ('Build Docker Image') {
 			steps {
 				echo "Build Docker Image"
