@@ -14,12 +14,12 @@ pipeline {
 				sh 'mvn --version'
 				// sh 'node --version'
 				sh 'docker version'
-				echo "PATH - $PATH"
-				echo "Build Number - $env.BUILD_NUMBERH"
-				echo "BUILD_ID - $env.BUILD_ID"
-				echo "JOB_NAME - $env.JOB_NAME"
-				echo "TAG_NAME - $env.TAG_NAME"
-				echo "BUILD_URL - $env.BUILD_URL"
+				// echo "PATH - $PATH"
+				// echo "Build Number - $env.BUILD_NUMBERH"
+				// echo "BUILD_ID - $env.BUILD_ID"
+				// echo "JOB_NAME - $env.JOB_NAME"
+				// echo "TAG_NAME - $env.TAG_NAME"
+				// echo "BUILD_URL - $env.BUILD_URL"
 			}
 		}
 		stage('Test3') {
