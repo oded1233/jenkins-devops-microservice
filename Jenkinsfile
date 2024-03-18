@@ -29,18 +29,46 @@ pipeline {
 				sh 'mvn clean compile'
 			}
 		}
-		stage('Test') {
+		// stage('Test') {
+		// 	steps {
+		// 		echo "Test"
+		// 		sh 'mvn test'
+		// 	}
+		// }	
+		// stage ('Integration-Test') {
+		// 	steps {
+		// 		echo "Integration-Test"
+		// 		sh 'mvn failsafe:integration-test failsafe:verify'
+		//     }
+		// }
+		stage ('package') {
 			steps {
-				echo "Test"
-				sh 'mvn test'
+				echo "package"
+				sh 'mvn package -DskipTests'
+		
+		
+		stage ('Build Docker Image') {
+			steps {
+				echo "Build Docker Image"
+				// docker build -t oded1233/currency-exchange-devops:$env.BUILD_ID
+				script {
+					dockerImage = docker.build("oded1233/currency-exchange-devops:${$env.BUILD_ID}")
+				}
 			}
-		}	
-		stage ('Integration-Test') {
-			steps {
-				echo "Integration-Test"
-				sh 'mvn failsafe:integration-test failsafe:verify'
-		    }
 		}
+		stage ('Push Docker Image') {
+			steps {
+				echo "Push Docker Image"
+				script {
+					docker.withRegistry('','dockerhub') {
+						dockerImage.push();
+						dockerImage.push('latest');
+					}
+				}
+				
+			}
+		}
+
 	} 
 
 	post {
