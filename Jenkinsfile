@@ -1,11 +1,22 @@
+// Scripted 
+
 node {
-	stage('Build') {
-		echo "Build"
+	stage('Build1') {
+		echo "Build1"
 	}
-	stage('Test') {
-		echo "Test"
+	stage('Test1') {
+		echo "Test1"
 	}
-	stage('Integration-Test') {
-		echo "Integration-Test"
+	stage('Integration-Test1') {
+		echo "Integration-Test1"
+	}
+
+//declarative
+
+node {
+	echo "Build2"
+	echo "Test2"
+	echo "Integration-Test2"
 	}
 }
+
