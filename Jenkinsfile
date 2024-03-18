@@ -28,8 +28,9 @@ pipeline {
 		failure {
 			echo "Baasa, something went wrong"
 		}
-		// changed {
+		changed {
 			echo "I run when there was a change from previous build status"
 		}
 	}
 }
+
