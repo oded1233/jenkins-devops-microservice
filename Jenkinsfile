@@ -22,6 +22,7 @@ pipeline {
 				echo "TAG_NAME - $env.TAG_NAME"
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
+		}			
 		stage('Compile') {
 			steps {
 				echo "Compile"
@@ -56,5 +57,4 @@ pipeline {
 			echo "I run when there was a change from previous build status"
 		}
 	}
-}
 }
