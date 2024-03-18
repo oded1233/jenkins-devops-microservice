@@ -18,6 +18,7 @@ pipeline {
 				echo "PATH - $PATH"
 				echo "Build Number - $env.BUILD_NUMBERH"
 				echo "BUILD_ID - $env.BUILD_ID"
+				echo "BUILD_TAG - $env.BUILD_TAG"
 				echo "JOB_NAME - $env.JOB_NAME"
 				echo "TAG_NAME - $env.TAG_NAME"
 				echo "BUILD_URL - $env.BUILD_URL"
@@ -50,9 +51,9 @@ pipeline {
 		stage ('Build Docker Image') {
 			steps {
 				echo "Build Docker Image"
-				// docker build -t oded1233/currency-exchange-devops:$env.BUILD_ID
+				// docker build -t oded1233/currency-exchange-devops:$env.BUILD_TAG
 				script {
-					dockerImage = docker.build("oded1233/currency-exchange-devops:${$env.BUILD_ID}")
+					dockerImage = docker.build("oded1233/currency-exchange-devops:${$env.BUILD_TAG")
 				}
 			}
 		}
