@@ -13,7 +13,7 @@ pipeline {
 				echo "Build3"
 				sh 'mvn --version'
 				// sh 'node --version'
-				sh docker version
+				sh 'docker version'
 				echo "PATH - $PATH"
 				echo "Build Number - $env.BUILD_NUMBERH"
 				echo "BUILD_ID - $env.BUILD_ID"
