@@ -20,13 +20,16 @@ pipeline {
 
 	post {
 		always {
-			echo "I'm cool"
+			echo "I'm always cool"
 		}
 		success {
-			echo "walla"
+			echo "walla, I am a sucess"
 		}
 		failure {
-			echo "Baasa"
+			echo "Baasa, something went wrong"
+		}
+		// changed {
+			echo "I run when there was a change from previous build status"
 		}
 	}
 }
