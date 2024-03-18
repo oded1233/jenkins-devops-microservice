@@ -20,3 +20,18 @@ node {
 	}
 }
 
+pipeline {
+	agent any
+	stages {
+		stage('Build3') {
+			echo "Build1"
+	}
+		stage('Test3') {
+			echo "Test1"
+	}
+		stage('Integration-Test3') {
+			echo "Integration-Test1"
+	}
+	}
+	
+}
