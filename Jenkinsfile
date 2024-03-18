@@ -1,9 +1,11 @@
 pipeline {
-	agent any
+	// agent any
+	agent { docker { image 'maven:6.3.3' } }
 	stages {
 		stage('Build3') {
 			steps {
 				echo "Build3"
+				sh maven --version
 			}
 		}
 		stage('Test3') {
