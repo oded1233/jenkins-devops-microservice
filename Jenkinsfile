@@ -53,7 +53,8 @@ pipeline {
 				echo "Build Docker Image"
 				// docker build -t oded1233/currency-exchange-devops:$env.BUILD_TAG
 				script {
-					dockerImage = docker.build("oded1233/currency-exchange-devops:${$env.BUILD_TAG}")
+					// dockerImage = docker.build("oded1233/currency-exchange-devops:${$env.BUILD_TAG}")
+					dockerImage = docker.build("oded1233/currency-exchange-devops:dockerimage-111")
 				}
 			}
 		}
